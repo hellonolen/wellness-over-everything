@@ -642,8 +642,33 @@
     <button class="btn btn-pink sticky-cart-btn" style="font-size:12px; padding:10px 18px;">Add to cart</button>
   </div>
 
+  <!-- ════════ CART DRAWER ════════ -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="cart-drawer-header">
+      <h2 class="cart-drawer-title">Your Cart</h2>
+      <button class="cart-drawer-close" id="cartClose" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-drawer-body" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <p style="font-size:16px;opacity:0.6;">Your cart is empty</p>
+        <p style="font-size:14px;opacity:0.4;margin-top:8px;">Add something to get started</p>
+      </div>
+    </div>
+    <div class="cart-drawer-footer" id="cartFooter" style="display:none;">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <p style="font-size:12px;opacity:0.55;margin-bottom:20px;">Shipping & taxes calculated at checkout</p>
+      <button class="btn btn-dark" style="width:100%;padding:18px;font-size:15px;border-radius:16px;" onclick="alert('Checkout coming soon — this is a preview!')">Proceed to Checkout →</button>
+      <button class="btn btn-outline" id="clearCart" style="width:100%;padding:14px;font-size:13px;margin-top:12px;border-radius:16px;">Clear Cart</button>
+    </div>
+  </aside>
+
   <!-- Toast notification -->
   <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
 
   <!-- ════════════════════════════════
        SCRIPTS
