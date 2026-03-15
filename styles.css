@@ -991,28 +991,99 @@ ul { list-style: none; }
 
 .toast.show { transform: translateX(-50%) translateY(0); }
 
-/* ── Responsive ── */
+/* ─────────────────────────────────────────
+   RESPONSIVE — Mobile First
+   ───────────────────────────────────────── */
+
+/* ── Tablet (≤1100px) ── */
 @media (max-width: 1100px) {
-  .products-grid { grid-template-columns: repeat(2, 1fr); }
-  .hero, .split-section, .founder-section { grid-template-columns: 1fr; }
-  .hero-image { min-height: 480px; }
-  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
-  .faq-grid { grid-template-columns: 1fr; }
+  .products-grid        { grid-template-columns: repeat(2, 1fr); }
+  .hero                 { grid-template-columns: 1fr; }
+  .hero-image           { min-height: 360px; }
+  .split-section        { grid-template-columns: 1fr; }
+  .founder-section      { grid-template-columns: 1fr; }
+  .footer-top           { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .faq-grid             { grid-template-columns: 1fr; }
 }
 
+/* ── Mobile (≤768px) ── */
 @media (max-width: 768px) {
-  .nav { padding: 0 24px; }
-  .nav-links { display: none; }
-  .section, .section-sm, .faq-section, .newsletter-section { padding: 64px 24px; }
-  .split-section { margin: 0 24px 32px; border-radius: 20px; }
-  .founder-section { padding: 64px 24px; }
-  .footer { padding: 64px 24px 32px; }
-  .footer-top { grid-template-columns: 1fr; gap: 32px; }
-  .products-grid { grid-template-columns: 1fr; }
-  .hero-content { padding: 60px 32px; }
-  .newsletter-form { flex-direction: column; }
-  .hero-float-card { left: 16px; bottom: 24px; }
+
+  /* Nav */
+  .nav               { padding: 0 20px; height: 64px; }
+  .nav-links         { display: none; }
+  .nav-actions .btn  { display: none; }   /* hide "Shop Now" text btn */
+
+  /* Announcement */
+  .announcement-bar  { font-size: 12px; padding: 10px 16px; }
+
+  /* Hero — stack vertically, image hidden on very small */
+  .hero              { grid-template-columns: 1fr; min-height: unset; }
+  .hero-content      { padding: 56px 24px 48px; }
+  .hero-image        { display: none; }           /* full bottle hero looks bad stacked */
+  .hero-float-card   { display: none; }
+
+  /* Sections */
+  .section,
+  .section-sm        { padding: 56px 20px; }
+  .faq-section       { padding: 56px 20px; }
+  .newsletter-section{ padding: 56px 20px; }
+
+  /* Products grid: 2 columns on mobile */
+  .products-grid     { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  /* Make product cards more compact */
+  .product-card-image{ height: 160px; }
+  .product-card-body { padding: 14px 14px 16px; }
+  .product-card-title{ font-size: 13px; }
+  .product-card-bottom{ flex-direction: column; align-items: flex-start; gap: 10px; }
+  .btn-add-cart      { width: 100%; text-align: center; font-size: 12px; padding: 10px; }
+
+  /* Split sections: stack */
+  .split-section     { grid-template-columns: 1fr; margin: 0 12px 24px; border-radius: 20px; }
+  .split-content     { padding: 32px 24px; }
+  .split-image       { height: 260px; }
+
+  /* Founder */
+  .founder-section   { grid-template-columns: 1fr; padding: 56px 24px; gap: 32px; }
+  .founder-images    { min-height: 280px; }
+
+  /* Benefits list */
+  .benefits-list     { gap: 12px; }
+
+  /* Stats row */
+  .hero-stats        { gap: 20px; }
+  .stat-number       { font-size: clamp(32px, 8vw, 48px); }
+
+  /* Newsletter */
+  .newsletter-form   { flex-direction: column; gap: 12px; }
+  .newsletter-input  { width: 100%; border-radius: 14px; }
+
+  /* Footer */
+  .footer            { padding: 56px 24px 120px; } /* extra bottom padding for sticky bar */
+  .footer-top        { grid-template-columns: 1fr; gap: 28px; }
+  .footer-mega-logo  { font-size: clamp(48px, 18vw, 100px); letter-spacing: -0.02em; }
+  .footer-bottom     { flex-direction: column; gap: 8px; text-align: center; }
+
+  /* Sticky cart — fuller on mobile */
+  .sticky-cart       { left: 12px; right: 12px; bottom: 12px; width: auto; padding: 14px 16px; }
+
+  /* Cart drawer — full width on mobile */
+  .cart-drawer       { width: 100vw; }
+
+  /* FAQ items */
+  .faq-question      { font-size: 16px; }
+
+  /* Marquee */
+  .marquee-section   { padding: 0; }
 }
+
+/* ── Very small (≤400px) ── */
+@media (max-width: 400px) {
+  .products-grid     { grid-template-columns: 1fr; }  /* single col on tiny screens */
+  .product-card-image{ height: 200px; }
+}
+
 
 /* Scroll reveal animation */
 .reveal {

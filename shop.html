@@ -58,12 +58,12 @@
     }
     @media(max-width:1100px){ .shop-grid { grid-template-columns: repeat(3,1fr); } }
     @media(max-width:768px){
-      .shop-hero, .filter-bar, .category-header, .shop-grid { padding-left: 24px; padding-right: 24px; }
-      .shop-grid { grid-template-columns: repeat(2,1fr); }
+      .shop-hero { padding: 64px 24px 48px; }
+      .filter-bar { padding: 20px 16px; gap: 8px; }
+      .category-header { padding: 40px 24px 16px; }
+      .shop-grid { grid-template-columns: repeat(2,1fr); gap: 12px; padding: 0 24px 48px; }
     }
-    @media(max-width:480px){
-      .shop-grid { grid-template-columns: 1fr; }
-    }
+    @media(max-width:400px){ .shop-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
