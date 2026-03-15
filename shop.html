@@ -405,6 +405,72 @@
   </footer>
 
   <div class="toast" id="toast" role="alert"></div>
+
+  <!-- Cart Drawer (required for addToCart) -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="cart-drawer-header">
+      <h2 class="cart-drawer-title">Your Cart</h2>
+      <button class="cart-drawer-close" id="cartClose" aria-label="Close cart">&#x2715;</button>
+    </div>
+    <div class="cart-drawer-body" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <p style="font-size:16px;opacity:0.6;">Your cart is empty</p>
+        <p style="font-size:14px;opacity:0.4;margin-top:8px;">Add something to get started</p>
+      </div>
+    </div>
+    <div class="cart-drawer-footer" id="cartFooter" style="display:none;">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <p style="font-size:12px;opacity:0.55;margin-bottom:20px;">Shipping &amp; taxes calculated at checkout</p>
+      <button class="btn btn-dark" style="width:100%;padding:18px;font-size:15px;border-radius:16px;" onclick="alert('Checkout coming soon — this is a preview!')">Proceed to Checkout &rarr;</button>
+      <button class="btn btn-outline" id="clearCart" style="width:100%;padding:14px;font-size:13px;margin-top:12px;border-radius:16px;">Clear Cart</button>
+    </div>
+  </aside>
+
   <script src="main.js"></script>
+  <script>
+    // ── Filter Pills ──
+    const pills = document.querySelectorAll('.filter-pill');
+    const sectionMap = {
+      'All Products':  null,
+      'Wellness':      document.getElementById('wellness-section'),
+      'Performance':   document.getElementById('performance'),
+      'Beauty':        document.querySelector('.category-header:nth-of-type(3)'),
+    };
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        // Update active state
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        const label = pill.textContent.trim();
+
+        if (label === 'All Products') {
+          // scroll to top of product section
+          document.getElementById('wellness-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+
+        // Find the matching category header by text content
+        const headers = document.querySelectorAll('.category-header');
+        for (const header of headers) {
+          if (header.textContent.trim().replace(/[^a-zA-Z]/g, '').toLowerCase()
+              .includes(label.replace(/[^a-zA-Z]/g, '').toLowerCase())) {
+            header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return;
+          }
+        }
+
+        // Fallback: scroll to matching section id
+        const target = document.getElementById(label.toLowerCase().replace(/\s+/g, '-'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+
 </body>
 </html>
