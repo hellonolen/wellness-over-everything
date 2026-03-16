@@ -2,7 +2,7 @@
 import { useCart } from './CartProvider'
 
 export default function CartDrawer() {
-  const { cart, removeFromCart, clearCart, closeCart, isOpen, total } = useCart()
+  const { cart, removeFromCart, clearCart, closeCart, isOpen, total, checkout, checkingOut } = useCart()
 
   return (
     <>
@@ -47,10 +47,11 @@ export default function CartDrawer() {
             <p style={{fontSize:'12px',opacity:0.55,marginBottom:'20px'}}>Shipping &amp; taxes calculated at checkout</p>
             <button
               className="btn btn-dark"
-              style={{width:'100%',padding:'18px',fontSize:'15px',borderRadius:'16px'}}
-              onClick={() => alert('Checkout coming soon — this is a preview!')}
+              style={{width:'100%',padding:'18px',fontSize:'15px',borderRadius:'16px',opacity:checkingOut?0.7:1}}
+              onClick={checkout}
+              disabled={checkingOut}
             >
-              Proceed to Checkout &rarr;
+              {checkingOut ? 'Redirecting to checkout...' : 'Proceed to Checkout →'}
             </button>
             <button
               className="btn btn-outline"

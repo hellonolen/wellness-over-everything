@@ -31,6 +31,9 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          NEXT_PUBLIC_SHOPIFY_DOMAIN: ${{ secrets.SHOPIFY_DOMAIN }}
+          NEXT_PUBLIC_SHOPIFY_STOREFRONT_TOKEN: ${{ secrets.SHOPIFY_STOREFRONT_TOKEN }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
