@@ -97,6 +97,15 @@ export default function HomePage() {
             <div><div className="hero-stat-num heading">100%</div><div className="hero-stat-label">Verified Nutrients</div></div>
           </div>
         </div>
+        <div className="hero-image">
+          <img
+            src={`${IMGS}/magnesium.jpg`}
+            alt="DLD Dynamics supplement bottle"
+            style={{objectFit:'contain', objectPosition:'center', padding:'60px 40px', width:'100%', height:'100%'}}
+            onError={e => { e.target.parentElement.style.background='linear-gradient(135deg,rgba(223,22,156,0.15),var(--cream))'; e.target.style.display='none' }}
+          />
+          <div className="hero-image-overlay" />
+        </div>
       </section>
 
       {/* MARQUEE 1 */}
