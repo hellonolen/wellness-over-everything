@@ -37,9 +37,18 @@ export default function AboutPage() {
 
       {/* Founder Images */}
       <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr', height:'480px' }}>
-        {['owner-portrait.png','owner-elegant.png','owner-outdoor.png'].map((img, i) => (
+        {[
+          { src:'owner-morning.png', pos:'center top' },
+          { src:'owner-elegant.png', pos:'center top' },
+          { src:'owner-gym.png',     pos:'center top' },
+        ].map((img, i) => (
           <div key={i} style={{ overflow:'hidden', position:'relative' }}>
-            <img src={`${IMGS}/${img}`} alt="DLD Dynamics founder" style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block' }} onError={e => { e.target.style.display='none'; e.target.parentElement.style.background='var(--pink)' }} />
+            <img
+              src={`${IMGS}/${img.src}`}
+              alt="DLD Dynamics founder"
+              style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition: img.pos, display:'block', filter:'brightness(1.05) contrast(0.97) saturate(0.95)' }}
+              onError={e => { e.target.style.display='none'; e.target.parentElement.style.background='var(--pink)' }}
+            />
           </div>
         ))}
       </section>
