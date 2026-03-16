@@ -16,10 +16,10 @@ export default function Nav() {
   return (
     <nav className={`nav${scrolled ? ' scrolled' : ''}`} role="navigation">
       <Link href="/" className="nav-logo" aria-label="Wellness Over Everything home">
-        <svg width="220" height="36" viewBox="0 0 220 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="27" fontFamily="'Schibsted Grotesk', Georgia, serif" fontWeight="900" fontSize="22" letterSpacing="-0.5" fill="#2D1025">WELLNESS</text>
-          <text x="120" y="27" fontFamily="'Schibsted Grotesk', Georgia, serif" fontWeight="400" fontSize="14" letterSpacing="1.2" fill="#DF169C">OVER EVERYTHING</text>
-          <rect x="0" y="31" width="80" height="2.5" rx="1.25" fill="#DF169C"/>
+        <svg width="170" height="42" viewBox="0 0 170 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="20" fontFamily="'Schibsted Grotesk', Georgia, serif" fontWeight="900" fontSize="20" letterSpacing="-0.5" fill="#2D1025">WELLNESS</text>
+          <text x="1" y="35" fontFamily="'Schibsted Grotesk', Georgia, serif" fontWeight="400" fontSize="11" letterSpacing="2" fill="#DF169C">OVER EVERYTHING</text>
+          <rect x="0" y="38" width="150" height="2" rx="1" fill="#DF169C"/>
         </svg>
       </Link>
       <ul className="nav-links" role="list">
