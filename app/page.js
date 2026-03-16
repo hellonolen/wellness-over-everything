@@ -107,11 +107,11 @@ export default function HomePage() {
             <div><div className="hero-stat-num heading">100%</div><div className="hero-stat-label">Verified Nutrients</div></div>
           </div>
         </div>
-        <div className="hero-image" style={{background:'#2D1025'}}>
+        <div className="hero-image" style={{background:'#FFFFFF'}}>
           <img
             src={heroImg || `${IMGS}/magnesium.jpg`}
             alt="DLD Dynamics featured supplement"
-            style={{objectFit:'contain', objectPosition:'center', padding:'48px 32px', width:'100%', height:'100%', transition:'opacity 0.4s'}}
+            style={{objectFit:'contain', objectPosition:'center', padding:'48px 32px', width:'100%', height:'100%'}}
             onError={e => { if (heroImg) { e.target.src = `${IMGS}/magnesium.jpg` } }}
           />
           <div className="hero-image-overlay" />
