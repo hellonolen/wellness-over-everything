@@ -36,7 +36,7 @@ const filters = ['All Products', 'Wellness', 'Performance', 'Beauty', 'Cognitive
 function ProductCard({ p }) {
   const { addToCart } = useCart()
   return (
-    <article className="product-card reveal">
+    <article className="product-card">
       <div className="product-card-image" style={p.bg ? { background: p.bg } : {}}>
         <img
           src={`${IMGS}/${p.img}`}
@@ -110,7 +110,7 @@ export default function ShopPage() {
       </div>
 
       {/* Newsletter */}
-      <section className="newsletter-section reveal">
+      <section className="newsletter-section">
         <p className="section-tag" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '8px' }}>— Stay in the loop</p>
         <h2 className="newsletter-title">Join the DLD family.</h2>
         <p className="newsletter-sub">Get 10% off your first order, early access, and wellness tips that work.</p>

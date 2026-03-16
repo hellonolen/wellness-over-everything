@@ -2,8 +2,9 @@
 import Link from 'next/link'
 import { useCart } from '../components/CartProvider'
 import { showToast } from '../components/Toast'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import StickyCartBar from '../components/StickyCartBar'
+import { getProducts } from '../lib/shopify'
 
 const IMGS = '/dld-dynamics/images'
 
@@ -34,7 +35,7 @@ const faqs = [
 function ProductCard({ product, delay }) {
   const { addToCart } = useCart()
   return (
-    <article className="product-card reveal" role="listitem" style={delay ? { transitionDelay: `${delay}s` } : {}}>
+    <article className="product-card" role="listitem">
       <div className="product-card-image" style={product.bg ? { background: product.bg } : {}}>
         <img
           src={`${IMGS}/${product.img}`}
@@ -74,6 +75,15 @@ function FaqItem({ q, a }) {
 }
 
 export default function HomePage() {
+  const [heroImg, setHeroImg] = useState(null)
+
+  useEffect(() => {
+    getProducts().then(products => {
+      const img = products?.[0]?.images?.edges?.[0]?.node?.url
+      if (img) setHeroImg(img)
+    }).catch(() => {})
+  }, [])
+
   return (
     <>
       {/* HERO */}
@@ -97,12 +107,12 @@ export default function HomePage() {
             <div><div className="hero-stat-num heading">100%</div><div className="hero-stat-label">Verified Nutrients</div></div>
           </div>
         </div>
-        <div className="hero-image">
+        <div className="hero-image" style={{background:'#2D1025'}}>
           <img
-            src={`${IMGS}/magnesium.jpg`}
-            alt="DLD Dynamics supplement bottle"
-            style={{objectFit:'contain', objectPosition:'center', padding:'60px 40px', width:'100%', height:'100%'}}
-            onError={e => { e.target.parentElement.style.background='linear-gradient(135deg,rgba(223,22,156,0.15),var(--cream))'; e.target.style.display='none' }}
+            src={heroImg || `${IMGS}/magnesium.jpg`}
+            alt="DLD Dynamics featured supplement"
+            style={{objectFit:'contain', objectPosition:'center', padding:'48px 32px', width:'100%', height:'100%', transition:'opacity 0.4s'}}
+            onError={e => { if (heroImg) { e.target.src = `${IMGS}/magnesium.jpg` } }}
           />
           <div className="hero-image-overlay" />
         </div>
@@ -122,7 +132,7 @@ export default function HomePage() {
 
       {/* BESTSELLERS */}
       <section className="section" id="shop" aria-labelledby="shop-heading">
-        <div className="section-header reveal">
+        <div className="section-header">
           <div>
             <p className="section-tag">— Our Collection</p>
             <h2 className="section-title" id="shop-heading">The <em>bestsellers.</em></h2>
@@ -137,7 +147,7 @@ export default function HomePage() {
       </section>
 
       {/* SPLIT 1 — Real Life */}
-      <div className="split-section reveal" id="about">
+      <div className="split-section" id="about">
         <div className="split-image">
           <img src={`${IMGS}/owner-basketball.png`} alt="DLD Dynamics founder lifestyle" style={{objectFit:'cover',objectPosition:'center',width:'100%',height:'100%',display:'block'}} onError={e => { e.target.parentElement.style.background='linear-gradient(160deg,#DF169C,#2D1025)'; e.target.style.display='none' }} />
         </div>
@@ -155,7 +165,7 @@ export default function HomePage() {
       </div>
 
       {/* SPLIT 2 — Performance */}
-      <div className="split-section reverse reveal" id="performance">
+      <div className="split-section reverse" id="performance">
         <div className="split-image">
           <img src={`${IMGS}/owner-gym.png`} alt="DLD Dynamics gym performance" style={{objectFit:'cover',objectPosition:'center top',width:'100%',height:'100%',display:'block'}} onError={e => { e.target.style.display='none'; e.target.parentElement.style.background='linear-gradient(160deg,#4760FF,#2D1025)' }} />
         </div>
@@ -173,7 +183,7 @@ export default function HomePage() {
       </div>
 
       {/* FOUNDER SECTION */}
-      <section className="founder-section reveal" id="wellness" aria-labelledby="founder-heading">
+      <section className="founder-section" id="wellness" aria-labelledby="founder-heading">
         <div className="founder-images">
           <div className="founder-img-main">
             <img src={`${IMGS}/owner-elegant.png`} alt="DLD Dynamics founder" style={{objectFit:'cover',objectPosition:'center top',width:'100%',height:'100%',display:'block',borderRadius:'16px'}} onError={e => { e.target.parentElement.style.background='linear-gradient(135deg,#DF169C,#E0F269)'; e.target.style.display='none' }} />
@@ -208,7 +218,7 @@ export default function HomePage() {
 
       {/* MORE PRODUCTS */}
       <section className="section" aria-labelledby="more-heading">
-        <div className="section-header reveal">
+        <div className="section-header">
           <div>
             <p className="section-tag">— More favorites</p>
             <h2 className="section-title" id="more-heading">Keep <em>going.</em></h2>
@@ -222,7 +232,7 @@ export default function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="faq-section reveal" aria-labelledby="faq-heading">
+      <section className="faq-section" aria-labelledby="faq-heading">
         <div className="section-header">
           <div>
             <p className="section-tag">— Got questions?</p>
@@ -235,7 +245,7 @@ export default function HomePage() {
       </section>
 
       {/* NEWSLETTER */}
-      <section className="newsletter-section reveal" aria-labelledby="newsletter-heading">
+      <section className="newsletter-section" aria-labelledby="newsletter-heading">
         <p className="section-tag" style={{color:'rgba(255,255,255,0.7)',marginBottom:'8px'}}>— Stay in the loop</p>
         <h2 className="newsletter-title" id="newsletter-heading">Join the DLD family.</h2>
         <p className="newsletter-sub">Get 10% off your first order, early access, and wellness tips that work.</p>
