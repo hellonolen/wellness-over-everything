@@ -1017,10 +1017,10 @@ ul { list-style: none; }
   /* Announcement */
   .announcement-bar  { font-size: 12px; padding: 10px 16px; }
 
-  /* Hero — stack vertically, image hidden on very small */
-  .hero              { grid-template-columns: 1fr; min-height: unset; }
-  .hero-content      { padding: 56px 24px 48px; }
-  .hero-image        { display: none; }           /* full bottle hero looks bad stacked */
+  /* Hero — stack vertically, keep full height */
+  .hero              { grid-template-columns: 1fr; min-height: 90vh; background: linear-gradient(160deg, var(--cream) 60%, rgba(223,22,156,0.08) 100%); }
+  .hero-content      { padding: 60px 24px 56px; justify-content: center; }
+  .hero-image        { display: none; }
   .hero-float-card   { display: none; }
 
   /* Sections */

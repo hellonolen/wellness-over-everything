@@ -4,6 +4,8 @@ import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import CartDrawer from '../components/CartDrawer'
 import Toast from '../components/Toast'
+import ScrollReveal from '../components/ScrollReveal'
+import BackToTop from '../components/BackToTop'
 
 export const metadata = {
   title: 'DLD Dynamics — Premium Supplements Crafted for Real Life',
@@ -20,6 +22,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <CartProvider>
+          <ScrollReveal />
           <div className="announcement-bar">
             Free shipping on orders over $50 &nbsp;·&nbsp; Use code <strong>DLD10</strong> for 10% off your first order
           </div>
@@ -28,6 +31,7 @@ export default function RootLayout({ children }) {
           <Footer />
           <CartDrawer />
           <Toast />
+          <BackToTop />
         </CartProvider>
       </body>
     </html>
