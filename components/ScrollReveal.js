@@ -3,6 +3,9 @@ import { useEffect } from 'react'
 
 export default function ScrollReveal() {
   useEffect(() => {
+    // Mark body as JS-ready so .reveal CSS animation activates
+    document.body.classList.add('js-ready')
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(el => {
@@ -12,19 +15,15 @@ export default function ScrollReveal() {
           }
         })
       },
-      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
     )
 
-    // Observe all current .reveal elements
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
+    // Small delay to let React paint first
+    const timer = setTimeout(() => {
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
+    }, 100)
 
-    // Also watch for dynamically added .reveal elements
-    const mutation = new MutationObserver(() => {
-      document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el))
-    })
-    mutation.observe(document.body, { childList: true, subtree: true })
-
-    return () => { observer.disconnect(); mutation.disconnect() }
+    return () => { clearTimeout(timer); observer.disconnect() }
   }, [])
 
   return null
