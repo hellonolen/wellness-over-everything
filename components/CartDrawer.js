@@ -24,7 +24,7 @@ export default function CartDrawer() {
               <div className="cart-item" key={idx}>
                 <img
                   className="cart-item-img"
-                  src={item.img || '/dld-dynamics/images/magnesium.jpg'}
+                  src={item.img || '/wellness-over-everything/images/magnesium.jpg'}
                   alt={item.name}
                   onError={e => { e.target.style.display = 'none' }}
                 />

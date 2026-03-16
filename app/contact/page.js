@@ -33,7 +33,7 @@ export default function ContactPage() {
             Contact info
           </h2>
           {[
-            { label:'Email', value:'hello@dlddynamics.com' },
+            { label:'Email', value:'hello@wellnessovereverything.com' },
             { label:'Hours', value:'Mon – Fri, 9am – 6pm EST' },
             { label:'Response time', value:'Within 24 hours' },
           ].map(item => (

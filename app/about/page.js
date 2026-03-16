@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 
-const IMGS = '/dld-dynamics/images'
+const IMGS = '/wellness-over-everything/images'
 
 const values = [
   { title:'Made for Women', icon:'♀', body:'Every formula is designed around women\'s biology. No proprietary blends hiding weak doses — just clean, premium ingredients at amounts that actually move the needle.' },
@@ -9,16 +9,16 @@ const values = [
   { title:'Real Life Ready', icon:'⚡', body:'Supplements that fit your schedule, not the other way around. Simple daily routines designed for the woman who is always on the move and refuses to slow down.' },
   { title:'Transparent Always', icon:'◎', body:'We list every ingredient, every dose, every time. You deserve to know exactly what you\'re putting in your body — no fillers, no tricks, no fine print.' },
   { title:'Results You Feel', icon:'✓', body:'We stand behind every product with a 30-day satisfaction guarantee. If you don\'t feel the difference, we\'ll make it right. That\'s a promise, not a policy.' },
-  { title:'Community Driven', icon:'❤', body:'5,000+ women across the US trust DLD Dynamics. We listen, iterate, and build every new formula around real feedback from real customers in our community.' },
+  { title:'Community Driven', icon:'❤', body:'5,000+ women across the US trust Wellness Over Everything. We listen, iterate, and build every new formula around real feedback from real customers in our community.' },
 ]
 
 const milestones = [
   { year:'2026', event:'Continuing the mission — launching new formulas and expanding the community' },
-  { year:'2025', event:'DLD enters the digital-first era — full e-commerce launch and national shipping' },
+  { year:'2025', event:'Wellness Over Everything enters the digital-first era — full e-commerce launch and national shipping' },
   { year:'2024', event:'Expanded to 16 premium formulas across Wellness, Beauty, and Performance' },
-  { year:'2023', event:'5,000 women join the DLD family — community grows coast to coast' },
+  { year:'2023', event:'5,000 women join the Wellness Over Everything family — community grows coast to coast' },
   { year:'2022', event:'First five products launch, all selling out within weeks of release' },
-  { year:'2021', event:'DLD Dynamics founded — driven by a personal health journey and a gap in the market' },
+  { year:'2021', event:'Wellness Over Everything founded — driven by a personal health journey and a gap in the market' },
 ]
 
 export default function AboutPage() {
@@ -31,7 +31,7 @@ export default function AboutPage() {
           Built for the woman <em style={{ color:'var(--pink)', fontStyle:'italic' }}>who does it all.</em>
         </h1>
         <p style={{ fontSize:'18px', opacity:0.65, marginTop:'24px', maxWidth:'560px', lineHeight:1.6 }}>
-          DLD Dynamics isn't just a supplement brand. It's a daily commitment to showing up — for yourself, for your goals, for your life.
+          Wellness Over Everything isn't just a supplement brand. It's a daily commitment to showing up — for yourself, for your goals, for your life.
         </p>
       </section>
 
@@ -45,7 +45,7 @@ export default function AboutPage() {
           <div key={i} style={{ overflow:'hidden', position:'relative' }}>
             <img
               src={`${IMGS}/${img.src}`}
-              alt="DLD Dynamics founder"
+              alt="Wellness Over Everything founder"
               style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition: img.pos, display:'block', filter:'brightness(1.05) contrast(0.97) saturate(0.95)' }}
               onError={e => { e.target.style.display='none'; e.target.parentElement.style.background='var(--pink)' }}
             />
@@ -63,10 +63,10 @@ export default function AboutPage() {
         </div>
         <div>
           <p style={{ fontSize:'17px', lineHeight:1.8, color:'rgba(45,16,37,0.7)', marginBottom:'24px' }}>
-            I started DLD Dynamics because I was tired of supplements that promised everything and delivered nothing. As a woman who trains hard, works harder, and is always on the move — I needed products that kept up with me.
+            I started Wellness Over Everything because I was tired of supplements that promised everything and delivered nothing. As a woman who trains hard, works harder, and is always on the move — I needed products that kept up with me.
           </p>
           <p style={{ fontSize:'17px', lineHeight:1.8, color:'rgba(45,16,37,0.7)' }}>
-            Every product in the DLD line has been personally tested and trusted. No guesswork — just clean, effective formulas made for real life.
+          Every product in the Wellness Over Everything line has been personally tested and trusted. No guesswork — just clean, effective formulas made for real life.
           </p>
         </div>
       </section>
@@ -91,7 +91,7 @@ export default function AboutPage() {
       {/* Lifestyle images */}
       <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', height:'500px' }}>
         <div style={{ overflow:'hidden' }}>
-          <img src={`${IMGS}/owner-airplane.png`} alt="DLD Dynamics lifestyle" style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center' }} onError={e => { e.target.style.display='none'; e.target.parentElement.style.background='var(--lime)' }} />
+          <img src={`${IMGS}/owner-airplane.png`} alt="Wellness Over Everything lifestyle" style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center' }} onError={e => { e.target.style.display='none'; e.target.parentElement.style.background='var(--lime)' }} />
         </div>
         <div style={{ overflow:'hidden' }}>
           <img src={`${IMGS}/wellness-lifestyle.png`} alt="Wellness lifestyle" style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center' }} onError={e => { e.target.style.display='none'; e.target.parentElement.style.background='var(--dark)' }} />
@@ -119,7 +119,7 @@ export default function AboutPage() {
         <h2 style={{ fontFamily:"'Schibsted Grotesk',sans-serif", fontSize:'clamp(36px,5vw,72px)', fontWeight:900, letterSpacing:'-0.03em', marginBottom:'24px' }}>
           Ready to start?
         </h2>
-        <p style={{ fontSize:'18px', opacity:0.85, marginBottom:'40px' }}>Shop the full DLD Dynamics collection.</p>
+        <p style={{ fontSize:'18px', opacity:0.85, marginBottom:'40px' }}>Shop the full Wellness Over Everything collection.</p>
         <Link href="/shop" className="btn btn-white" style={{ fontSize:'16px', padding:'18px 40px' }}>Shop All Products →</Link>
       </section>
     </>

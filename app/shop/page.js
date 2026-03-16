@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useCart } from '../../components/CartProvider'
 import { showToast } from '../../components/Toast'
 
-const IMGS = '/dld-dynamics/images'
+const IMGS = '/wellness-over-everything/images'
 
 const wellness = [
   { name:'Magnesium Glycinate', price:'$26.90', badge:'Bestseller', img:'magnesium.jpg', caps:'120 capsules' },
@@ -112,7 +112,7 @@ export default function ShopPage() {
       {/* Newsletter */}
       <section className="newsletter-section">
         <p className="section-tag" style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '8px' }}>— Stay in the loop</p>
-        <h2 className="newsletter-title">Join the DLD family.</h2>
+        <h2 className="newsletter-title">Join the WOE family.</h2>
         <p className="newsletter-sub">Get 10% off your first order, early access, and wellness tips that work.</p>
         <form className="newsletter-form" onSubmit={e => { e.preventDefault(); showToast('Thanks! Check your inbox.') }}>
           <input className="newsletter-input" type="email" placeholder="Your email address" required />

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/dld-dynamics',
+  basePath: '/wellness-over-everything',
   images: { unoptimized: true },
   trailingSlash: true,
 }

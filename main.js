@@ -1,5 +1,5 @@
 // =====================
-// DLD DYNAMICS — main.js
+// WELLNESS OVER EVERYTHING — main.js
 // =====================
 
 // SVG bottle fallback for broken product images
@@ -17,7 +17,7 @@ function showBottleFallback(img) {
     { key: 'Strawberry',   bg: '#9BFDF0', stroke: '#DF169C', label: 'MULTI\nGUMMIES' },
   ];
   const alt = img.alt || '';
-  const match = colorMap.find(c => alt.includes(c.key)) || { bg: '#F5F0EC', stroke: '#2D1025', label: 'DLD\nSUPPLEMENT' };
+  const match = colorMap.find(c => alt.includes(c.key)) || { bg: '#F5F0EC', stroke: '#2D1025', label: 'WOE\nSUPPLEMENT' };
   const [l1, l2] = match.label.split('\n');
   const isDark = ['#4760FF', '#DF169C'].includes(match.stroke);
   const labelFill = isDark ? 'rgba(255,255,255,0.22)' : match.bg;
@@ -29,8 +29,8 @@ function showBottleFallback(img) {
         <rect x="28" y="4" width="34" height="18" rx="7" fill="${cap}"/>
         <rect x="18" y="18" width="54" height="112" rx="14" fill="white" stroke="${match.stroke}" stroke-width="2"/>
         <rect x="22" y="48" width="46" height="56" rx="6" fill="${labelFill}" stroke="${cap}" stroke-width="0.8" opacity="0.9"/>
-        <text x="45" y="66" text-anchor="middle" font-size="7" font-weight="900" fill="${labelText}" font-family="Arial,sans-serif">DLD</text>
-        <text x="45" y="76" text-anchor="middle" font-size="5.5" fill="${labelText}" font-family="Arial,sans-serif">DYNAMICS</text>
+        <text x="45" y="66" text-anchor="middle" font-size="7" font-weight="900" fill="${labelText}" font-family="Arial,sans-serif">WOE</text>
+        <text x="45" y="76" text-anchor="middle" font-size="5.5" fill="${labelText}" font-family="Arial,sans-serif">WELLNESS</text>
         <line x1="28" y1="82" x2="62" y2="82" stroke="${labelText}" stroke-width="0.8" opacity="0.5"/>
         <text x="45" y="93" text-anchor="middle" font-size="5" font-weight="700" fill="${labelText}" font-family="Arial,sans-serif">${l1}</text>
         <text x="45" y="101" text-anchor="middle" font-size="4.5" fill="${labelText}" font-family="Arial,sans-serif">${l2}</text>
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.newsletter-form')?.addEventListener('submit', (e) => {
     e.preventDefault();
     e.target.querySelector('input').value = '';
-    showToast('Welcome to DLD Dynamics!');
+    showToast('Welcome to Wellness Over Everything!');
   });
 
   // Seamless marquee

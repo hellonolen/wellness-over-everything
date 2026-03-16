@@ -15,11 +15,11 @@ export default function Nav() {
 
   return (
     <nav className={`nav${scrolled ? ' scrolled' : ''}`} role="navigation">
-      <Link href="/" className="nav-logo" aria-label="DLD Dynamics home">
-        <svg width="160" height="36" viewBox="0 0 160 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="27" fontFamily="'Schibsted Grotesk', Georgia, serif" fontWeight="900" fontSize="26" letterSpacing="-0.5" fill="#2D1025">DLD</text>
-          <text x="54" y="27" fontFamily="'Schibsted Grotesk', Georgia, serif" fontWeight="400" fontSize="18" letterSpacing="1.5" fill="#DF169C">DYNAMICS</text>
-          <rect x="0" y="31" width="40" height="2.5" rx="1.25" fill="#DF169C"/>
+      <Link href="/" className="nav-logo" aria-label="Wellness Over Everything home">
+        <svg width="220" height="36" viewBox="0 0 220 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="27" fontFamily="'Schibsted Grotesk', Georgia, serif" fontWeight="900" fontSize="22" letterSpacing="-0.5" fill="#2D1025">WELLNESS</text>
+          <text x="120" y="27" fontFamily="'Schibsted Grotesk', Georgia, serif" fontWeight="400" fontSize="14" letterSpacing="1.2" fill="#DF169C">OVER EVERYTHING</text>
+          <rect x="0" y="31" width="80" height="2.5" rx="1.25" fill="#DF169C"/>
         </svg>
       </Link>
       <ul className="nav-links" role="list">

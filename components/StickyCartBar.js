@@ -15,7 +15,7 @@ export default function StickyCartBar() {
   return (
     <div className={`sticky-cart${visible ? ' visible' : ''}`} aria-live="polite">
       <img
-        src="/dld-dynamics/images/magnesium.jpg"
+        src="/wellness-over-everything/images/magnesium.jpg"
         alt=""
         style={{width:'48px',height:'48px',borderRadius:'12px',objectFit:'contain',background:'var(--cream)',padding:'4px',flexShrink:0}}
       />
@@ -26,7 +26,7 @@ export default function StickyCartBar() {
       <button
         className="btn btn-pink sticky-cart-btn"
         style={{fontSize:'12px',padding:'10px 18px'}}
-        onClick={() => addToCart({name:'Magnesium Glycinate', price:'$26.90', img:'/dld-dynamics/images/magnesium.jpg'})}
+        onClick={() => addToCart({name:'Magnesium Glycinate', price:'$26.90', img:'/wellness-over-everything/images/magnesium.jpg'})}
       >
         Add to cart
       </button>

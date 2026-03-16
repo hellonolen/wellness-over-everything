@@ -5,10 +5,10 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-top">
         <div>
-          <div className="footer-brand-name">DLD<br/>DYNAMICS</div>
+          <div className="footer-brand-name">WELLNESS<br/>OVER EVERYTHING</div>
           <p className="footer-brand-sub">Premium supplements crafted for real life.</p>
           <p style={{fontFamily:"'IBM Plex Mono', monospace",fontSize:'12px',color:'var(--pink)',marginTop:'16px',letterSpacing:'0.06em'}}>
-            © 2026 DLD Dynamics
+            © 2026 Wellness Over Everything
           </p>
         </div>
         <div className="footer-col">
@@ -40,9 +40,9 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="footer-mega-logo" aria-hidden="true">DLD DYNAMICS</div>
+      <div className="footer-mega-logo" aria-hidden="true">WELLNESS OVER EVERYTHING</div>
       <div className="footer-bottom">
-        <span>© 2026 DLD Dynamics. All rights reserved.</span>
+        <span>© 2026 Wellness Over Everything. All rights reserved.</span>
         <span>Made for real life.</span>
       </div>
     </footer>

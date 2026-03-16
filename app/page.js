@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import StickyCartBar from '../components/StickyCartBar'
 import { getProducts } from '../lib/shopify'
 
-const IMGS = '/dld-dynamics/images'
+const IMGS = '/wellness-over-everything/images'
 
 const products1 = [
   { name:'Magnesium Glycinate', price:'$26.90', badge:'Bestseller', img:'magnesium.jpg', caps:'120 capsules · relaxation', desc:'Relaxes the body & supports deep, restorative sleep.' },
@@ -110,7 +110,7 @@ export default function HomePage() {
         <div className="hero-image" style={{background:'#FFFFFF'}}>
           <img
             src={heroImg || `${IMGS}/magnesium.jpg`}
-            alt="DLD Dynamics featured supplement"
+            alt="Wellness Over Everything featured supplement"
             style={{objectFit:'contain', objectPosition:'center', padding:'48px 32px', width:'100%', height:'100%'}}
             onError={e => { if (heroImg) { e.target.src = `${IMGS}/magnesium.jpg` } }}
           />
@@ -121,10 +121,10 @@ export default function HomePage() {
       {/* MARQUEE 1 */}
       <div className="marquee-section" aria-hidden="true">
         <div className="marquee-track">
-          {['Zero effort','Verified nutrients','Free shipping over $50','Science-backed formulas','Real results','Crafted for real life','Premium quality','DLD Dynamics'].map((t,i) => (
+          {['Zero effort','Verified nutrients','Free shipping over $50','Science-backed formulas','Real results','Crafted for real life','Premium quality','Wellness Over Everything'].map((t,i) => (
             <span key={i}>{t} <span className="marquee-dot" /></span>
           ))}
-          {['Zero effort','Verified nutrients','Free shipping over $50','Science-backed formulas','Real results','Crafted for real life','Premium quality','DLD Dynamics'].map((t,i) => (
+          {['Zero effort','Verified nutrients','Free shipping over $50','Science-backed formulas','Real results','Crafted for real life','Premium quality','Wellness Over Everything'].map((t,i) => (
             <span key={`b${i}`}>{t} <span className="marquee-dot" /></span>
           ))}
         </div>
@@ -149,12 +149,12 @@ export default function HomePage() {
       {/* SPLIT 1 — Real Life */}
       <div className="split-section" id="about">
         <div className="split-image">
-          <img src={`${IMGS}/owner-basketball.png`} alt="DLD Dynamics founder lifestyle" style={{objectFit:'cover',objectPosition:'center',width:'100%',height:'100%',display:'block'}} onError={e => { e.target.parentElement.style.background='linear-gradient(160deg,#DF169C,#2D1025)'; e.target.style.display='none' }} />
+          <img src={`${IMGS}/owner-basketball.png`} alt="Wellness Over Everything founder lifestyle" style={{objectFit:'cover',objectPosition:'center',width:'100%',height:'100%',display:'block'}} onError={e => { e.target.parentElement.style.background='linear-gradient(160deg,#DF169C,#2D1025)'; e.target.style.display='none' }} />
         </div>
         <div className="split-content bg-lime">
           <p className="section-tag">— The founder</p>
           <h2 className="split-title">Real life. Real results.</h2>
-          <p className="split-body">DLD Dynamics was born from a personal journey — understanding that true wellness isn't a one-size-fits-all approach. Every product is chosen because it works for real women living real, full lives.</p>
+          <p className="split-body">Wellness Over Everything was born from a personal journey — understanding that true wellness isn't a one-size-fits-all approach. Every product is chosen because it works for real women living real, full lives.</p>
           <div className="benefits-list">
             <div className="benefit-item"><div className="benefit-icon">—</div><p>Formulated for women's biology</p></div>
             <div className="benefit-item"><div className="benefit-icon">—</div><p>No unnecessary fillers</p></div>
@@ -167,7 +167,7 @@ export default function HomePage() {
       {/* SPLIT 2 — Performance */}
       <div className="split-section reverse" id="performance">
         <div className="split-image">
-          <img src={`${IMGS}/owner-gym.png`} alt="DLD Dynamics gym performance" style={{objectFit:'cover',objectPosition:'center top',width:'100%',height:'100%',display:'block'}} onError={e => { e.target.style.display='none'; e.target.parentElement.style.background='linear-gradient(160deg,#4760FF,#2D1025)' }} />
+          <img src={`${IMGS}/owner-gym.png`} alt="Wellness Over Everything gym performance" style={{objectFit:'cover',objectPosition:'center top',width:'100%',height:'100%',display:'block'}} onError={e => { e.target.style.display='none'; e.target.parentElement.style.background='linear-gradient(160deg,#4760FF,#2D1025)' }} />
         </div>
         <div className="split-content bg-blue">
           <p className="section-tag">— Performance line</p>
@@ -186,20 +186,20 @@ export default function HomePage() {
       <section className="founder-section" id="wellness" aria-labelledby="founder-heading">
         <div className="founder-images">
           <div className="founder-img-main">
-            <img src={`${IMGS}/owner-elegant.png`} alt="DLD Dynamics founder" style={{objectFit:'cover',objectPosition:'center top',width:'100%',height:'100%',display:'block',borderRadius:'16px'}} onError={e => { e.target.parentElement.style.background='linear-gradient(135deg,#DF169C,#E0F269)'; e.target.style.display='none' }} />
+            <img src={`${IMGS}/owner-elegant.png`} alt="Wellness Over Everything founder" style={{objectFit:'cover',objectPosition:'center top',width:'100%',height:'100%',display:'block',borderRadius:'16px'}} onError={e => { e.target.parentElement.style.background='linear-gradient(135deg,#DF169C,#E0F269)'; e.target.style.display='none' }} />
           </div>
           <div className="founder-img-sm">
             <img src={`${IMGS}/owner-morning.png`} alt="Morning wellness routine" style={{objectFit:'cover',objectPosition:'center top',width:'100%',height:'100%',display:'block',borderRadius:'16px'}} onError={e => { e.target.parentElement.style.background='linear-gradient(135deg,#4760FF,#9BFDF0)'; e.target.style.display='none' }} />
           </div>
           <div className="founder-img-sm">
-            <img src={`${IMGS}/owner-basketball.png`} alt="DLD lifestyle" style={{objectFit:'cover',objectPosition:'center',width:'100%',height:'100%',display:'block',borderRadius:'16px'}} onError={e => { e.target.parentElement.style.background='linear-gradient(135deg,#2D1025,#DF169C)'; e.target.style.display='none' }} />
+            <img src={`${IMGS}/owner-basketball.png`} alt="Wellness lifestyle" style={{objectFit:'cover',objectPosition:'center',width:'100%',height:'100%',display:'block',borderRadius:'16px'}} onError={e => { e.target.parentElement.style.background='linear-gradient(135deg,#2D1025,#DF169C)'; e.target.style.display='none' }} />
           </div>
         </div>
         <div className="founder-content">
           <p className="section-tag">— Our mission</p>
           <h2 className="founder-title" id="founder-heading">Wellness that<br/><em>moves with you.</em></h2>
-          <blockquote className="founder-quote">"I created DLD Dynamics because I couldn't find supplements made for women like me — active, ambitious, and living full out."</blockquote>
-          <p className="founder-body">DLD Dynamics is more than a supplement brand. It's a daily commitment to showing up for yourself — at the gym, at work, in life. Every capsule, every formula, every product is chosen with intention by a woman who understands the hustle firsthand.</p>
+          <blockquote className="founder-quote">"I created Wellness Over Everything because I couldn't find supplements made for women like me — active, ambitious, and living full out."</blockquote>
+          <p className="founder-body">Wellness Over Everything is more than a supplement brand. It's a daily commitment to showing up for yourself — at the gym, at work, in life. Every capsule, every formula, every product is chosen with intention by a woman who understands the hustle firsthand.</p>
           <Link href="/shop" className="btn btn-pink">Explore the full line</Link>
         </div>
       </section>
@@ -207,10 +207,10 @@ export default function HomePage() {
       {/* MARQUEE 2 */}
       <div className="marquee-section" style={{background:'var(--pink)'}} aria-hidden="true">
         <div className="marquee-track" style={{animationDirection:'reverse',animationDuration:'32s'}}>
-          {['Beauty from within','Hair · Skin · Nails','Cognitive support','Stress relief','Bone health','Energy & focus','DLD Dynamics'].map((t,i) => (
+          {['Beauty from within','Hair · Skin · Nails','Cognitive support','Stress relief','Bone health','Energy & focus','Wellness Over Everything'].map((t,i) => (
             <span key={i}>{t} <span className="marquee-dot" style={{background:'var(--lime)'}} /></span>
           ))}
-          {['Beauty from within','Hair · Skin · Nails','Cognitive support','Stress relief','Bone health','Energy & focus','DLD Dynamics'].map((t,i) => (
+          {['Beauty from within','Hair · Skin · Nails','Cognitive support','Stress relief','Bone health','Energy & focus','Wellness Over Everything'].map((t,i) => (
             <span key={`b${i}`}>{t} <span className="marquee-dot" style={{background:'var(--lime)'}} /></span>
           ))}
         </div>
@@ -247,7 +247,7 @@ export default function HomePage() {
       {/* NEWSLETTER */}
       <section className="newsletter-section" aria-labelledby="newsletter-heading">
         <p className="section-tag" style={{color:'rgba(255,255,255,0.7)',marginBottom:'8px'}}>— Stay in the loop</p>
-        <h2 className="newsletter-title" id="newsletter-heading">Join the DLD family.</h2>
+        <h2 className="newsletter-title" id="newsletter-heading">Join the WOE family.</h2>
         <p className="newsletter-sub">Get 10% off your first order, early access, and wellness tips that work.</p>
         <form className="newsletter-form" onSubmit={e => { e.preventDefault(); showToast('Thanks! Check your inbox.') }}>
           <input className="newsletter-input" type="email" placeholder="Your email address" required />

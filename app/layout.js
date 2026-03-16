@@ -7,7 +7,7 @@ import Toast from '../components/Toast'
 import BackToTop from '../components/BackToTop'
 
 export const metadata = {
-  title: 'DLD Dynamics — Premium Supplements Crafted for Real Life',
+  title: 'Wellness Over Everything — Premium Supplements Crafted for Real Life',
   description: 'Science-backed supplements formulated for the everyday high performer. Shop Magnesium Glycinate, Creatine, Beauty blends, and more.',
 }
 
@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
       <body>
         <CartProvider>
           <div className="announcement-bar">
-            Free shipping on orders over $50 &nbsp;·&nbsp; Use code <strong>DLD10</strong> for 10% off your first order
+            Free shipping on orders over $50 &nbsp;·&nbsp; Use code <strong>WOE10</strong> for 10% off your first order
           </div>
           <Nav />
           <main>{children}</main>
