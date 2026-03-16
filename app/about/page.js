@@ -1,0 +1,114 @@
+'use client'
+import Link from 'next/link'
+
+const IMGS = '/dld-dynamics/images'
+
+const values = [
+  { title:'Made for Women', body:'No proprietary blends hiding weak doses. No unnecessary fillers. Just clean, premium ingredients at amounts that actually make a difference.' },
+  { title:'Science First', body:'Every formula is backed by research. We source the highest-quality raw ingredients and work with certified manufacturers to ensure potency and purity.' },
+  { title:'Built for Real Life', body:'These supplements work around your schedule, not the other way around. Simple daily routines that fit into your real, full, beautiful life.' },
+]
+
+const milestones = [
+  { year:'2021', event:'DLD Dynamics founded — driven by a personal health journey' },
+  { year:'2022', event:'First five products launched, all selling out within weeks' },
+  { year:'2023', event:'5,000 women join the DLD family across the US' },
+  { year:'2024', event:'Expanded to 16 premium formulas across 4 categories' },
+  { year:'2026', event:'Continuing the mission: wellness that moves with you' },
+]
+
+export default function AboutPage() {
+  return (
+    <>
+      {/* Hero */}
+      <section style={{ background:'var(--dark)', padding:'100px 72px 80px', color:'var(--white)' }}>
+        <p className="section-tag" style={{ color:'var(--lime)', marginBottom:'16px' }}>— Our Story</p>
+        <h1 style={{ fontFamily:"'Schibsted Grotesk',sans-serif", fontSize:'clamp(48px,6vw,96px)', fontWeight:900, letterSpacing:'-0.03em', lineHeight:1, maxWidth:'800px' }}>
+          Built for the woman <em style={{ color:'var(--pink)', fontStyle:'italic' }}>who does it all.</em>
+        </h1>
+        <p style={{ fontSize:'18px', opacity:0.65, marginTop:'24px', maxWidth:'560px', lineHeight:1.6 }}>
+          DLD Dynamics isn't just a supplement brand. It's a daily commitment to showing up — for yourself, for your goals, for your life.
+        </p>
+      </section>
+
+      {/* Founder Images */}
+      <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr', height:'480px' }}>
+        {['owner-portrait.png','owner-elegant.png','owner-outdoor.png'].map((img, i) => (
+          <div key={i} style={{ overflow:'hidden', position:'relative' }}>
+            <img src={`${IMGS}/${img}`} alt="DLD Dynamics founder" style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top', display:'block' }} onError={e => { e.target.style.display='none'; e.target.parentElement.style.background='var(--pink)' }} />
+          </div>
+        ))}
+      </section>
+
+      {/* Mission */}
+      <section style={{ padding:'96px 72px', background:'var(--cream)', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'80px', alignItems:'start' }}>
+        <div>
+          <p className="section-tag" style={{ marginBottom:'16px' }}>— The mission</p>
+          <h2 style={{ fontFamily:"'Schibsted Grotesk',sans-serif", fontSize:'clamp(36px,4vw,60px)', fontWeight:900, letterSpacing:'-0.02em', lineHeight:1.1, color:'var(--dark)' }}>
+            Wellness that <em style={{ color:'var(--pink)', fontStyle:'italic' }}>actually works.</em>
+          </h2>
+        </div>
+        <div>
+          <p style={{ fontSize:'17px', lineHeight:1.8, color:'rgba(45,16,37,0.7)', marginBottom:'24px' }}>
+            I started DLD Dynamics because I was tired of supplements that promised everything and delivered nothing. As a woman who trains hard, works harder, and is always on the move — I needed products that kept up with me.
+          </p>
+          <p style={{ fontSize:'17px', lineHeight:1.8, color:'rgba(45,16,37,0.7)' }}>
+            Every product in the DLD line has been personally tested and trusted. No guesswork — just clean, effective formulas made for real life.
+          </p>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section style={{ padding:'96px 72px', background:'var(--white)' }}>
+        <p className="section-tag" style={{ marginBottom:'16px' }}>— What we stand for</p>
+        <h2 style={{ fontFamily:"'Schibsted Grotesk',sans-serif", fontSize:'clamp(36px,4vw,56px)', fontWeight:900, letterSpacing:'-0.02em', marginBottom:'56px' }}>
+          Our <em style={{ color:'var(--pink)', fontStyle:'italic' }}>values.</em>
+        </h2>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'32px' }}>
+          {values.map((v, i) => (
+            <div key={i} className="reveal" style={{ background:'var(--cream)', borderRadius:'24px', padding:'40px', transitionDelay:`${i*0.1}s` }}>
+              <div style={{ width:'48px', height:'4px', background:'var(--pink)', borderRadius:'4px', marginBottom:'24px' }} />
+              <h3 style={{ fontFamily:"'Schibsted Grotesk',sans-serif", fontSize:'22px', fontWeight:900, marginBottom:'16px', color:'var(--dark)' }}>{v.title}</h3>
+              <p style={{ fontSize:'15px', lineHeight:1.7, color:'rgba(45,16,37,0.65)' }}>{v.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Lifestyle images */}
+      <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', height:'500px' }}>
+        <div style={{ overflow:'hidden' }}>
+          <img src={`${IMGS}/owner-airplane.png`} alt="DLD Dynamics lifestyle" style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center' }} onError={e => { e.target.style.display='none'; e.target.parentElement.style.background='var(--lime)' }} />
+        </div>
+        <div style={{ overflow:'hidden' }}>
+          <img src={`${IMGS}/wellness-lifestyle.png`} alt="Wellness lifestyle" style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center' }} onError={e => { e.target.style.display='none'; e.target.parentElement.style.background='var(--teal)' }} />
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section style={{ padding:'96px 72px', background:'var(--dark)', color:'var(--white)' }}>
+        <p className="section-tag" style={{ color:'var(--lime)', marginBottom:'16px' }}>— The journey</p>
+        <h2 style={{ fontFamily:"'Schibsted Grotesk',sans-serif", fontSize:'clamp(36px,4vw,56px)', fontWeight:900, letterSpacing:'-0.02em', marginBottom:'56px' }}>
+          How we got <em style={{ color:'var(--pink)', fontStyle:'italic' }}>here.</em>
+        </h2>
+        <div style={{ display:'flex', flexDirection:'column', gap:'0' }}>
+          {milestones.map((m, i) => (
+            <div key={i} style={{ display:'grid', gridTemplateColumns:'120px 1fr', gap:'32px', padding:'28px 0', borderBottom: i < milestones.length-1 ? '1px solid rgba(255,255,255,0.1)' : 'none', alignItems:'center' }}>
+              <div style={{ fontFamily:"'IBM Plex Mono',monospace", fontSize:'13px', color:'var(--lime)', letterSpacing:'0.06em', fontWeight:500 }}>{m.year}</div>
+              <div style={{ fontSize:'17px', lineHeight:1.5, opacity:0.8 }}>{m.event}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section style={{ background:'var(--pink)', padding:'96px 72px', textAlign:'center', color:'var(--white)' }}>
+        <h2 style={{ fontFamily:"'Schibsted Grotesk',sans-serif", fontSize:'clamp(36px,5vw,72px)', fontWeight:900, letterSpacing:'-0.03em', marginBottom:'24px' }}>
+          Ready to start?
+        </h2>
+        <p style={{ fontSize:'18px', opacity:0.85, marginBottom:'40px' }}>Shop the full DLD Dynamics collection.</p>
+        <Link href="/shop" className="btn btn-white" style={{ fontSize:'16px', padding:'18px 40px' }}>Shop All Products →</Link>
+      </section>
+    </>
+  )
+}
