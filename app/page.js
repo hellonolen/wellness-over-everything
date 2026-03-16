@@ -97,17 +97,6 @@ export default function HomePage() {
             <div><div className="hero-stat-num heading">100%</div><div className="hero-stat-label">Verified Nutrients</div></div>
           </div>
         </div>
-        <div className="hero-image">
-          <img src={`${IMGS}/magnesium.jpg`} alt="DLD Dynamics Magnesium Glycinate" style={{objectFit:'contain',objectPosition:'center',padding:'40px'}} onError={e => { e.target.parentElement.style.background='linear-gradient(135deg,#DF169C,#2D1025)'; e.target.style.display='none' }} />
-          <div className="hero-image-overlay" />
-          <div className="hero-float-card">
-            <div>
-              <div className="float-card-title">Magnesium Glycinate</div>
-              <div className="float-card-price">$26.90</div>
-              <span className="float-card-badge">Bestseller</span>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* MARQUEE 1 */}
